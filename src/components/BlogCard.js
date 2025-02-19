@@ -18,12 +18,12 @@ export default function BlogCard({ title, description, image, username, time, id
   const navigate = useNavigate();
 
   const handleEdit = () => {
-    navigate(`/blog-details/${id}`);
+    navigate(`${process.env.REACT_APP_API_URL}/blog-details/${id}`);
   };
 
   const handleDelete = async () => {
     try {
-      const { data } = await axios.delete(`/api/v1/blog/delete-blog/${id}`);
+      const { data } = await axios.delete(`${process.env.REACT_APP_API_URL}/api/v1/blog/delete-blog/${id}`);
       if (data?.success) {
         toast.success('Blog Deleted');
         window.location.reload();
