@@ -21,29 +21,41 @@ const Register = () => {
         }))
     }
     //form handle
-    const handleSubmit =async(e)=>{
-        e.preventDefault()
+    const handleSubmit = async (e) => {
+        e.preventDefault();
         try {
             console.log("API URL:", process.env.REACT_APP_API_URL);
-
-           const {data} =await axios.post(`${process.env.REACT_APP_API_URL}/api/v1/user/register`,{
-            username:inputs.name,
-            email:inputs.email,
-            password:inputs.password
-        })
-
-           if(data.success){
-            toast.success("User Register Successfully")
-            navigate("/login")
-           }
-
-            
+            console.log("Request Payload:", {
+                username: inputs.name,
+                email: inputs.email,
+                password: inputs.password
+            });
+    
+            const { data } = await axios.post(
+                `${process.env.REACT_APP_API_URL}/api/v1/user/register`,
+                {
+                    username: inputs.name,
+                    email: inputs.email,
+                    password: inputs.password
+                },
+                { headers: { "Content-Type": "application/json" } } // Ensure correct headers
+            );
+    
+            console.log("Response Data:", data);
+    
+            if (data.success) {
+                toast.success("User Registered Successfully");
+                navigate("/login");
+            }
         } catch (error) {
-            console.log(error);
-            
+            console.error("Registration Error:", error.response);
+    
+            toast.error(
+                error?.response?.data?.message || "Registration Failed"
+            );
         }
-      
-    }
+    };
+    
 
     return (
         < >
