@@ -24,6 +24,8 @@ const Register = () => {
     const handleSubmit =async(e)=>{
         e.preventDefault()
         try {
+            console.log("API URL:", process.env.REACT_APP_API_URL);
+
            const {data} =await axios.post(`${process.env.REACT_APP_API_URL}/api/v1/user/register`,{
             username:inputs.name,
             email:inputs.email,
