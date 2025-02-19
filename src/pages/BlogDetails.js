@@ -14,7 +14,7 @@ const BlogDetails = () => {
   // Fetch Blog Details
   const getBlogDetail = async () => {
     try {
-      const { data } = await axios.get(`/api/v1/blog/get-blog/${id}`);
+      const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/blog/get-blog/${id}`);
       if (data?.success) {
         setBlog(data?.blog);
         setInputs({
