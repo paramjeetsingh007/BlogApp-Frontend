@@ -18,7 +18,7 @@ export default function BlogCard({ title, description, image, username, time, id
   const navigate = useNavigate();
 
   const handleEdit = () => {
-    navigate(`${process.env.REACT_APP_API_URL}/blog-details/${id}`);
+    navigate(`/blog-details/${id}`);
   };
 
   const handleDelete = async () => {
