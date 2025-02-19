@@ -49,7 +49,7 @@ const Header = () => {
 
   return (
     <>
-      <AppBar position="sticky" style={{ backgroundColor: "#000000" }}>
+      <AppBar position="sticky" style={{ backgroundColor: "#1b263b" }}>
         <Toolbar>
           {/* Logo with flexGrow to push elements to the right */}
           <Typography

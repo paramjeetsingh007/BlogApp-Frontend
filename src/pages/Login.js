@@ -50,10 +50,11 @@ const Login = () => {
 
     return (
         < >
+    
         <form onSubmit={handleSubmit}>
 
    
-            <Box maxWidth={450} display="flex" flexDirection={'column'} alignitems="center" margin="auto" marginTop={5} boxShadow="10px 10px 20px #ccc" padding={3} borderRadius={5}>
+            <Box maxWidth={450} display="flex" flexDirection={'column'} alignitems="center" margin="auto" marginTop={5} boxShadow="10px 10px 20px #ccc" padding={3} borderRadius={5} >
                 <Typography variant="h4"
                 sx={{ textTransform: "uppercase" }}
                 padding={3} textAlign="center">
